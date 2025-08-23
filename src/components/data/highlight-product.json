@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Wireless Headphones",
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "photo": "https://i.ibb.co.com/Gvw47tSY/1738866196o-Xapv.jpg",
+    "price": 59.99,
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "title": "Smart Watch",
+    "description": "Fitness smart watch with heart rate monitor and GPS.",
+    "photo": "https://i.ibb.co.com/QvKDhDbf/download.jpg",
+    "price": 99.99,
+    "category": "Wearables"
+  },
+  {
+    "id": 3,
+    "title": "Gaming Mouse",
+    "description": "Ergonomic gaming mouse with customizable RGB lights.",
+    "photo": "https://i.ibb.co.com/N2CxTZZd/download-1.jpg",
+    "price": 29.99,
+    "category": "Accessories"
+  },
+  {
+    "id": 4,
+    "title": "Laptop Backpack",
+    "description": "Waterproof backpack suitable for 15-inch laptops.",
+    "photo": "https://i.ibb.co.com/kgWdJ3Fc/download-2.jpg",
+    "price": 49.99,
+    "category": "Bags"
+  },
+  {
+    "id": 5,
+    "title": "Bluetooth Speaker",
+    "description": "Portable Bluetooth speaker with 12 hours playtime.",
+    "photo": "https://i.ibb.co.com/NdDLZKJp/download-3.jpg",
+    "price": 39.99,
+    "category": "Electronics"
+  },
+  {
+    "id": 6,
+    "title": "Digital Camera",
+    "description": "Compact digital camera with 20MP resolution.",
+    "photo": "https://i.ibb.co.com/My2jHCcq/download-4.jpg",
+    "price": 199.99,
+    "category": "Photography"
+  },
+  {
+    "id": 7,
+    "title": "Running Shoes",
+    "description": "Comfortable running shoes with shock absorption.",
+    "photo": "https://i.ibb.co.com/0p7RxjN9/download-5.jpg",
+    "price": 69.99,
+    "category": "Footwear"
+  },
+  {
+    "id": 8,
+    "title": "Coffee Maker",
+    "description": "Automatic coffee maker with programmable timer.",
+    "photo": "https://i.ibb.co.com/KzKbR9g3/download-6.jpg",
+    "price": 89.99,
+    "category": "Home Appliances"
+  },
+  {
+    "id": 9,
+    "title": "Yoga Mat",
+    "description": "Eco-friendly non-slip yoga mat for all exercises.",
+    "photo": "https://i.ibb.co.com/4nWN2PDt/images.jpg",
+    "price": 19.99,
+    "category": "Fitness"
+  },
+  {
+    "id": 10,
+    "title": "LED Desk Lamp",
+    "description": "Adjustable LED desk lamp with touch control.",
+    "photo": "https://i.ibb.co.com/QFjYzsFB/images-1.jpg",
+    "price": 24.99,
+    "category": "Home Decor"
+  }
+]
