@@ -1,17 +1,35 @@
+"use client";
 import Link from "next/link";
-import products from "../../components/data/product.json";
+import { useEffect, useState } from "react";
 
 export default function ProductsPage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/addProduct")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
   return (
-    <div className="p-6 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">Products</h1>
-      <div className="grid gap-6 md:grid-cols-3">
-        {products.map((p) => (
-          <div key={p.id} className="border p-4 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold">{p.name}</h3>
-            <p className="text-gray-600">{p.description}</p>
-            <p className="text-blue-600 font-bold">${p.price}</p>
-            <Link href={`/products/${p.id}`} className="text-sm text-blue-500 hover:underline">
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">All Products</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <div
+            key={product._id}
+            className="border rounded-lg shadow-md p-4 bg-white"
+          >
+            <h2 className="text-lg font-semibold">{product.name}</h2>
+            <p className="text-gray-600">{product.description}</p>
+            <p className="text-green-600 font-bold mt-2">${product.price}</p>
+
+            {/* Details page link */}
+            <Link
+              href={`/products/${product._id}`}
+              className="text-sm text-blue-500 hover:underline"
+            >
               View Details
             </Link>
           </div>
