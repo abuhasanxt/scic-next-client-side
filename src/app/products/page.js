@@ -6,7 +6,7 @@ export default function ProductsPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/addProduct")
+    fetch("https://scic-next-server.vercel.app/addProduct")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

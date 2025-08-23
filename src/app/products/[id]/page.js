@@ -3,9 +3,12 @@ import React from "react";
 export default async function ProductPage({ params }) {
   const id = params.id; // Next.js 15+ server component এ direct access কাজ করে
 
-  const res = await fetch(`http://localhost:5000/addProduct/${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `https://scic-next-server.vercel.app/addProduct/${id}`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!res.ok) return <p className="p-6 text-red-500">Product not found!</p>;
 
   const product = await res.json();

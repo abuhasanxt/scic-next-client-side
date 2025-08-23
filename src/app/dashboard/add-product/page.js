@@ -1,41 +1,4 @@
-// "use client"; // client component
 
-// import { useSession } from "next-auth/react";
-// import { useState } from "react";
-
-// export default function AddProductPage() {
-//   const { data: session, status } = useSession();
-//   const [name, setName] = useState("");
-//   const [desc, setDesc] = useState("");
-//   const [price, setPrice] = useState("");
-
-//   if (status === "loading") return <p>Loading session...</p>;
-//   if (!session) return <p>You must be logged in to add a product.</p>;
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const res = await fetch("/api/products", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ name, desc, price }),
-//     });
-
-//     if (res.ok) {
-//       alert("Product added successfully!");
-//       setName(""); setDesc(""); setPrice("");
-//     } else alert("Failed to add product.");
-//   };
-
-//   return (
-//     <div className="max-w-xl mx-auto mt-10 p-5 bg-white shadow rounded">
-//       <h1>Add Product</h1>
-//       <p>Logged in as: {session.user.email}</p>
-//       <form onSubmit={handleSubmit}>
-//         {/* inputs */}
-//       </form>
-//     </div>
-//   );
-// }
 "use client";
 import { useState } from "react";
 
@@ -58,7 +21,7 @@ export default function AddProductForm() {
   console.log("Product Data:", formData);
 
   try {
-    const res = await fetch("http://localhost:5000/addProduct", {
+    const res = await fetch("https://scic-next-server.vercel.app/addProduct", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
