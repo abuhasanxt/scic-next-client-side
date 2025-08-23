@@ -53,13 +53,39 @@ export default function AddProductForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Product Data:", formData);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log("Product Data:", formData);
 
-    // এখানে তুমি API call করতে পারো
-    // await fetch("/api/products", { method: "POST", body: JSON.stringify(formData) });
-  };
+  try {
+    const res = await fetch("http://localhost:5000/addProduct", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    console.log("Server Response:", data);
+
+    if (res.ok) {
+      alert("✅ Product added successfully!");
+      setFormData({
+        title: "",
+        description: "",
+        price: "",
+        photo: "",
+        category: "",
+      }); // ফর্ম reset
+    } else {
+      alert("❌ Failed to add product!");
+    }
+  } catch (error) {
+    console.error("Error adding product:", error);
+  }
+};
+
 
   return (
     <form
