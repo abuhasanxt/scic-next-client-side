@@ -21,9 +21,19 @@ export default function ProductsPage() {
             key={product._id}
             className="border rounded-lg shadow-md p-4 bg-white"
           >
-            <h2 className="text-lg font-semibold">{product.name}</h2>
-            <p className="text-gray-600">{product.description}</p>
-            <p className="text-green-600 font-bold mt-2">${product.price}</p>
+            <div>
+              <img
+                src={product.photo}
+                alt={product.title}
+                className="w-full  h-64 object-cover rounded-lg shadow-sm"
+              />
+            </div>
+
+            <h2 className="text-lg font-semibold">Title: {product.title}</h2>
+
+            <p className="text-green-600 font-bold mt-2">
+              Price ${product.price}
+            </p>
 
             {/* Details page link */}
             <Link
