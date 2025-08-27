@@ -19,7 +19,7 @@ export default function Navbar() {
           
         {data?.user && (
           <Link href="/dashboard/add-product" className="hover:text-gray-300">
-            Dashboard
+            Add Products
           </Link>
         )}
 
