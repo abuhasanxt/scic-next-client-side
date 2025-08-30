@@ -6,7 +6,7 @@ export default function Hero() {
         <p className="text-lg text-gray-700">Discover amazing products at the best prices.</p>
       </div>
       <div className="md:w-1/2">
-        <img src="../components/img" alt="Shop Hero" className="w-full h-auto rounded-lg shadow-lg" />
+        <img src="/hero.jpg" alt="Shop Hero" className="w-full h-auto rounded-lg shadow-lg" />
       </div>
     </section>
   );
