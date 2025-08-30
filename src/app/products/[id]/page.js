@@ -2,7 +2,7 @@ import { backendURL } from "@/config";
 import React from "react";
 
 export default async function ProductPage({ params }) {
-  const { id } = await params; // ✅ correct
+  const { id } = await params; 
 
   const res = await fetch(`${backendURL}/add-product/${id}`, {
     cache: "no-store",
