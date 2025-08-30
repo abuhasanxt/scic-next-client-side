@@ -12,7 +12,7 @@ export default async function ProductPage({ params }) {
     return <p className="p-6 text-red-500">❌ Product not found!</p>;
   }
 
-  const product = await res.json(); // single product object
+  const product = await res.json();  
 
   return (
     <div className="p-6 min-h-screen max-w-3xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200">
