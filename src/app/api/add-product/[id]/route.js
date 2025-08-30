@@ -2,7 +2,7 @@ import dbConnect from "@/lib/dbConnect";
 import { ObjectId } from "mongodb";
 
 export async function GET(req, { params }) {
-  const { id } = await params; // ✅ await করতে হবে
+  const { id } =  params; // ✅ await করতে হবে
   const db = await dbConnect();
 
   let product;
