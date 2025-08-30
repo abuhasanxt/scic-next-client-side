@@ -1,5 +1,5 @@
-
 "use client";
+import { backendURL } from "@/config";
 import { useState } from "react";
 
 export default function AddProductForm() {
@@ -16,39 +16,41 @@ export default function AddProductForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  console.log(backendURL);
+
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  console.log("Product Data:", formData);
+    e.preventDefault();
+    console.log("Product Data:", formData);
 
-  try {
-    const res = await fetch("https://scic-next-server.vercel.app/addProduct", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      console.log(backendURL + "/add-product");
+      const res = await fetch(backendURL + "/add-product", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await res.json();
-    console.log("Server Response:", data);
+      const data = await res.json();
+      console.log("Server Response:", data);
 
-    if (res.ok) {
-      alert("✅ Product added successfully!");
-      setFormData({
-        title: "",
-        description: "",
-        price: "",
-        photo: "",
-        category: "",
-      }); // ফর্ম reset
-    } else {
-      alert("❌ Failed to add product!");
+      if (res.ok) {
+        alert("✅ Product added successfully!");
+        setFormData({
+          title: "",
+          description: "",
+          price: "",
+          photo: "",
+          category: "",
+        }); // ফর্ম reset
+      } else {
+        alert("❌ Failed to add product!");
+      }
+    } catch (error) {
+      console.error("Error adding product:", error);
     }
-  } catch (error) {
-    console.error("Error adding product:", error);
-  }
-};
-
+  };
 
   return (
     <form

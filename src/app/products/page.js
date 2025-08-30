@@ -1,4 +1,5 @@
 "use client";
+import { backendURL } from "@/config";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -6,9 +7,9 @@ export default function ProductsPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://scic-next-server.vercel.app/addProduct")
+    fetch(backendURL + "/add-product")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data.data));
   }, []);
 
   return (
