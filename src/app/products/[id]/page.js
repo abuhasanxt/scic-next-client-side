@@ -15,7 +15,7 @@ export default async function ProductPage({ params }) {
   const product = await res.json(); // single product object
 
   return (
-    <div className="p-6 max-w-3xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200">
+    <div className="p-6 min-h-screen max-w-3xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200">
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/2">
           <img
